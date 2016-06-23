@@ -5,6 +5,8 @@ main
 cayley.cfg
 .cayley_history
 .DS_Store
+.otto
+.ottoid
 
 # The built binary
 /cayley

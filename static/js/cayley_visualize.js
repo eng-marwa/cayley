@@ -27,6 +27,7 @@ $(function() {
       result = results[i];
       source = result["source"]
       target = result["target"]
+	  relation = result["relation"]
 			var source_color
 			var target_color
 			if (result["source_color"] != undefined) {
@@ -77,6 +78,7 @@ $(function() {
         id: "e" + i,
         source: source,
         target: target,
+		label: relation,
         size: 5,
         color: '#ccc'
       })
@@ -84,7 +86,12 @@ $(function() {
     }
     sigmaGraph = new sigma({
       graph: g,
-      container: 'visualize',
+	  renderers: [
+		{
+			container: 'visualize',
+			type: 'canvas'
+		}
+	  ],
       settings: {
         defaultNodeColor: '#ec5148'
       }
